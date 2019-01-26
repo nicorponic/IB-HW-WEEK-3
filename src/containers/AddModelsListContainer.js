@@ -1,7 +1,7 @@
 import * as React from "react";
 import ModelsList from "./ModelsList";
 import { connect } from "react-redux";
-import { addComp } from "./actions/addComp";
+// import { addComp } from "./actions/addComp";
 
 const data = {
   "Ivel Z3": {
@@ -32,18 +32,18 @@ class AddModelsListContainer extends React.Component {
     this.props.dispatch({
       type: "ADD_COMP",
       payload: {
-        name: Object.keys(value),
-        manufacturer: data[value].manufacturer,
-        year: data[value].year,
-        origin: data[value].origin,
+        name: Object.keys(model),
+        manufacturer: data[model].manufacturer,
+        year: data[model].year,
+        origin: data[model].origin,
         ...model
       }
     });
   };
 
-  componentDidUpdate() {
-    this.props.addComp("Seriously Alice");
-  }
+  // componentDidUpdate() {
+  //   this.props.addComp("Seriously Alice");
+  // }
 
   render() {
     return <ModelsList models={this.props.models} />;
@@ -55,4 +55,4 @@ const mapStateToProps = (state)=>{
         models: state.models
     }
 }
-export default connect( mapStateToProps, { addComp } )(AddModelsListContainer);
+export default connect( mapStateToProps )(AddModelsListContainer);

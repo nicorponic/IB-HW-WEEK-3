@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
 import { addComp } from "./actions/addComp";
+import AddModelsListContainer from "./containers/AddModelsListContainer";
 
 const data = {
   "Ivel Z3": {
@@ -28,7 +29,7 @@ const data = {
 };
 
 class App extends Component {
-  state = [];
+  state = {};
 
   initialStateupdateSelection = event => {
     this.setState({
@@ -53,6 +54,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <AddModelsListContainer />
         <select id="modelList" onChange={this.updateSelection}>
           <option value="" disabled>
             {" "}

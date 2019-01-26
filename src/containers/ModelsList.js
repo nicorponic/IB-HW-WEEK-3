@@ -5,13 +5,13 @@ export default function ModelsList(props) {
     <div>
       <h1>Selected Models</h1>
      
-      <ul>
+      {/* <ul>
         {props.models.map(model => (
           <li className="model" key={model.id}>
             <p className="name">{model.title}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
